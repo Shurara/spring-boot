@@ -17,8 +17,8 @@ public class Hello0Controller {
     }
 
     @RequestMapping(value = "/{name}.txt", method = RequestMethod.GET, produces = "text/plain")
-    public String plain (@PathVariable String name) {
-        return new Person(counter.incrementAndGet(), name).toString();
+    public String plain (@PathVariable(name="name") String name1) {
+        return new Person(counter.incrementAndGet(), name1).toString();
     }
 
     @RequestMapping(value = "/{name}.txt1", produces = "application/text")
