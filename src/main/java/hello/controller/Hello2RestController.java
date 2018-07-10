@@ -1,5 +1,6 @@
 package hello.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,9 +18,12 @@ public class Hello2RestController {
     private List<Person> items= new ArrayList<>();
     private AtomicInteger counter = new AtomicInteger();
 
+    @Autowired
+    private MyPersistence persistence;
+
     @RequestMapping("")
     public String get0() {
-        return "root";
+        return "root "+persistence.name()+" "+persistence.val();
     }
 
     @RequestMapping("list")
