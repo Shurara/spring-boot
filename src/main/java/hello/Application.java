@@ -21,7 +21,7 @@ public class Application {
         return new MyPersistence();
     }
 
-    //@Bean
+    @Bean
     ApplicationRunner runner(ApplicationContext ctx) {
         return new ApplicationRunner() {
             @Override
