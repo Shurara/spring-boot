@@ -14,20 +14,4 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
-/*
-   @Bean
-   ApplicationRunner runner(ApplicationContext ctx) {
-        return new ApplicationRunner() {
-            @Override
-            public void run(ApplicationArguments args) throws Exception {
-                String[] beans = ctx.getBeanDefinitionNames();
-                Arrays.sort(beans);
-                for (String s : beans) {
-                    System.out.println(s);
-                }
-            }
-        };
-    }
-*/
 }
